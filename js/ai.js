@@ -33,7 +33,7 @@ async function improveText(){
 
         const response =
         await fetch(
-            "https://voice2text-ai-backend.onrender.com",
+            "https://voice2text-ai-backend.onrender.com/improve",
             {
 
                 method:"POST",
