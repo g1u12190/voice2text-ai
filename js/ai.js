@@ -11,6 +11,20 @@ document.getElementById("autoImprove");
 
 //------------------------------------------------------
 
+//======================================================
+// Despertar backend al abrir la aplicación
+//======================================================
+
+fetch("https://voice2text-ai-backend.onrender.com/")
+    .then(() => {
+        console.log("Backend listo");
+    })
+    .catch(() => {
+        console.log("Backend iniciando...");
+    });
+
+//------------------------------------------------------
+
 async function improveText(){
 
     const text = output.value.trim();
