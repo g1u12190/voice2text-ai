@@ -38,6 +38,24 @@ document.getElementById("status");
 
 //------------------------------------------------------
 
+// Despertar backend de Render 
+//------------------------------------------------------ 
+
+function wakeBackend(){ 
+    
+    fetch("https://voice2text-ai-backend.onrender.com/") .then(() => { 
+        
+        console.log("Backend listo."); 
+        
+    }) .catch(() => { 
+        
+        console.log("Backend iniciando..."); 
+        
+    }); 
+
+} 
+
+//------------------------------------------------------
 
 recognition.onstart = () => {
 
@@ -126,6 +144,9 @@ function startRecognition(){
 
     output.value = "";
 
+    // Despertar Render mientras comienza el dictado 
+    
+    wakeBackend();
 
     recognition.start();
 
@@ -141,7 +162,9 @@ function continueRecognition(){
 
     }
 
-    
+    // Despertar Render mientras comienza el dictado 
+    wakeBackend();
+
     recognition.start();
 
 }
